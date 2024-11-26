@@ -8,7 +8,7 @@ Roomform.addEventListener('submit', async (e) => {
     
   
     
-    const response = await fetch(`http://127.0.0.1:8000/getToken/?room=${roomName}`);
+    const response = await fetch(`https://friendchat-backend.onrender.com/getToken/?room=${roomName}`);
 
     if (!response.ok) {
         console.error('Failed to get token');

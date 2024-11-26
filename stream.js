@@ -1,4 +1,5 @@
 const APP_ID = "c98d2c61906641b9a4c62e83fb71aa09";
+let baseURL = 'https://friendchat-backend.onrender.com/';
 const TOKEN = sessionStorage.getItem("token");
 const CHANNEL = sessionStorage.getItem("room");
 let UID = sessionStorage.getItem("UID");
@@ -95,7 +96,7 @@ let toggleMic = async () => {
 };
 
 let createMember = async () => {
-  let response = await fetch("http://127.0.0.1:8000/createMember/", {
+  let response = await fetch("https://friendchat-backend.onrender.com/createMember/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -107,14 +108,14 @@ let createMember = async () => {
 };
 
 let getMember = async (user) => {
-  let response = await fetch(`http://127.0.0.1:8000/getMember/?UID=${user.uid}&room=${CHANNEL}`);
+  let response = await fetch(`https://friendchat-backend.onrender.com/getMember/?UID=${user.uid}&room=${CHANNEL}`);
 
   let member = await response.json();
   return member;
 };
 
 let deleteMember = async () => {
-  let response = await fetch("http://127.0.0.1:8000/deleteMember/", {
+  let response = await fetch("https://friendchat-backend.onrender.com/deleteMember/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
