@@ -22,7 +22,7 @@ let joinAndDisplayLocalStream = async () => {
 
     console.error("Error joining channel", error);
      
-    window.open('lobby.html', '_self')    
+    window.open('index.html', '_self')    
   }
 
   localTracks = await AgoraRTC.createMicrophoneAndCameraTracks();
@@ -71,7 +71,7 @@ let leaveAndRemoveLocalStream = async () => {
   await client.leave();
 
   deleteMember();
-  window.open("lobby.html", "_self");
+  window.open("index.html", "_self");
 };
 
 let toggleCamera = async () => {
